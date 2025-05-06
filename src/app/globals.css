@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Light Theme */
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 215 39% 11%; /* #111827 */
+    --card: 210 17% 98%; /* #F9FAFB */
+    --card-foreground: 215 39% 11%; /* #111827 */
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 215 39% 11%; /* #111827 */
+    --primary: 215 39% 11%; /* #111827 - Using primary text color for primary elements */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 210 17% 96%; /* Lighter surface for secondary elements */
+    --secondary-foreground: 215 39% 11%; /* #111827 */
+    --muted: 215 14% 47%; /* #6B7280 */
+    --muted-foreground: 215 10% 55%; /* Slightly lighter muted text */
+    --accent: 221 83% 53%; /* #2563EB */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 14% 90%; /* #E5E7EB */
+    --input: 220 14% 90%; /* #E5E7EB */
+    --ring: 221 83% 53%; /* #2563EB */
+    --chart-1: 221 83% 53%; /* Accent Blue */
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+
+    /* Sidebar specific - can be adjusted if needed, inheriting main theme for now */
+    --sidebar-background: 210 17% 98%; /* Surface */
+    --sidebar-foreground: 215 14% 47%; /* Muted */
+    --sidebar-primary: 221 83% 53%; /* Accent */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 220 14% 90%; /* Border */
+    --sidebar-accent-foreground: 215 39% 11%; /* Primary Text */
+    --sidebar-border: 220 10% 85%; /* Slightly darker border */
+    --sidebar-ring: 221 83% 53%; /* Accent */
+  }
+
+  .dark {
+    /* Dark Theme */
+    --background: 222 47% 11%; /* #0F172A */
+    --foreground: 210 17% 98%; /* #F9FAFB */
+    --card: 217 33% 17%; /* #1E293B */
+    --card-foreground: 210 17% 98%; /* #F9FAFB */
+    --popover: 222 47% 11%; /* #0F172A */
+    --popover-foreground: 210 17% 98%; /* #F9FAFB */
+    --primary: 210 17% 98%; /* #F9FAFB - Using primary text color for primary elements */
+    --primary-foreground: 222 47% 11%; /* Dark background for text on primary */
+    --secondary: 217 33% 22%; /* Slightly lighter surface for secondary */
+    --secondary-foreground: 210 17% 98%; /* #F9FAFB */
+    --muted: 217 10% 65%; /* #9CA3AF */
+    --muted-foreground: 217 10% 55%; /* Slightly darker muted text */
+    --accent: 217 91% 60%; /* #3B82F6 */
+    --accent-foreground: 222 47% 11%; /* Dark text on accent */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 216 28% 27%; /* #334155 */
+    --input: 216 28% 27%; /* #334155 */
+    --ring: 217 91% 60%; /* #3B82F6 */
+    --chart-1: 217 91% 60%; /* Accent Blue */
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    /* Sidebar specific - can be adjusted if needed, inheriting main theme for now */
+    --sidebar-background: 217 33% 17%; /* Surface */
+    --sidebar-foreground: 217 10% 65%; /* Muted */
+    --sidebar-primary: 217 91% 60%; /* Accent */
+    --sidebar-primary-foreground: 222 47% 11%; /* Dark Background */
+    --sidebar-accent: 216 28% 27%; /* Border */
+    --sidebar-accent-foreground: 210 17% 98%; /* Primary Text */
+    --sidebar-border: 216 20% 22%; /* Slightly darker border */
+    --sidebar-ring: 217 91% 60%; /* Accent */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
