@@ -17,7 +17,7 @@ import { redirect } from 'next/navigation';
 export default function CategoryPage({ params }: { params: { category: string } }) {
   // Redirect to the homepage with the category filter applied as a query parameter.
   redirect(`/?category=${params.category}`);
-
+  
   // Note: If you prefer to render the content directly on this route
   // without redirecting, you would essentially copy the content of
   // `src/app/page.tsx` here and modify it to use `params.category`
