@@ -113,11 +113,47 @@ Prisma.NullTypes = {
  * Enums
  */
 
-undefined
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  slug: 'slug',
+  icon: 'icon'
+};
+
+exports.Prisma.ArticleScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  title: 'title',
+  snippet: 'snippet',
+  author: 'author',
+  publishDate: 'publishDate',
+  imageUrl: 'imageUrl',
+  imageHint: 'imageHint',
+  categoryId: 'categoryId'
+};
+
+exports.Prisma.UserScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  password: 'password',
+  name: 'name'
+};
+
+exports.Prisma.SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+};
+
+exports.Prisma.QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+};
 
 
 exports.Prisma.ModelName = {
-
+  Category: 'Category',
+  Article: 'Article',
+  User: 'User'
 };
 
 /**

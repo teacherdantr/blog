@@ -88,7 +88,8 @@ async function getRelatedArticles(currentSlug: string, categorySlug: string): Pr
 
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const article = await getArticle(params.slug);
+  const awaitedParams = await params;
+  const article = await getArticle(awaitedParams.slug);
 
   if (!article) {
     return {
@@ -103,7 +104,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function ArticlePage({ params }: { params: { slug: string } }) {
-  const article = await getArticle(params.slug);
+  const awaitedParams = await params;
+  const article = await getArticle(awaitedParams.slug);
   const relatedArticles = article ? await getRelatedArticles(article.slug, article.categorySlug) : [];
 
 

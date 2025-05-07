@@ -14,15 +14,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 model Category {
-  id        String   @id @default(auto()) @map("_id")
+  id        String   @id @map("_id") @db.ObjectId
   name      String   @unique
   slug      String   @unique
   icon      String   // store icon name or key
+  articles  Article[]
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
+
 model Article {
-  id          String   @id @default(auto()) @map("_id")
+  id          String   @id  @map("_id") @db.ObjectId
   slug        String   @unique
   title       String
   snippet     String?
@@ -33,13 +36,12 @@ model Article {
   
   categoryId  String
   category    Category @relation(fields: [categoryId], references: [id])
-
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
 
 model User {
-  id        String   @id @default(auto()) @map("_id")
+  id        String   @id  @map("_id") @db.ObjectId
   email     String   @unique
   password  String   // Hashed password (bcrypt)
   name      String?

@@ -33,13 +33,21 @@ const buttonVariants = cva(
   }
 )
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+export interface ButtonProps extends VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  href?: string
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+// Define two separate interfaces for button and anchor props
+interface ButtonAsButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    ButtonProps {}
+
+interface ButtonAsAnchorProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    ButtonProps {}
+
+const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonAsButtonProps | ButtonAsAnchorProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     return (
